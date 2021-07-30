@@ -20,13 +20,11 @@
   "homepage": "https://github.com/NestorMosqueraBlandon/rveapi#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.4",
     "mongoose-paginate-v2": "^1.4.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12"
-  },
-  "devDependencies": {
-    "dotenv": "^10.0.0"
   }
 }
