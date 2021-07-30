@@ -2,11 +2,12 @@ import express from 'express'
 import morgan from 'morgan';
 import cors from 'cors';
 import userRouter from '../routes/userRouter.js';
+import config from '../helpers/config.js';
 
 const app = express();
 
 // settings
-app.set('port', process.env.PORT || 4000);
+app.set('port', config.PORT);
 
 // middlewares
 app.use(cors());
