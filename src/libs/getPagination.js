@@ -1,8 +1,8 @@
-const getOagination = (page, size) => {
+const getPagination = (page, size) => {
     const limit = size? +size : 3;
     const offset = page? page *  limit : 0;
 
     return {limit, offset};   
 }
 
-export default getOagination;
+export default getPagination;
