@@ -1,0 +1,17 @@
+###
+GET http://localhost:4000/api/v1/users
+
+###
+POST http://localhost:4000/api/v1/users
+Content-Type: application/json
+
+{
+    "name": "Juan Pablo",
+    "email": "soloconfi@gmail.com ",
+    "password": "colosonfi123 "
+}
+###
+GET http://localhost:4000/api/v1/users/610384eaa3ba8e66bc58498c
+
+###
+DELETE http://localhost:4000/api/v1/users/610384eaa3ba8e66bc58498c
