@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import getPagination from '../libs/getPagination.js'
+
 export const findAllUsers = async(req, res) => {
 
     try
