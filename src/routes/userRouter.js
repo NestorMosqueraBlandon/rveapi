@@ -4,6 +4,8 @@ const router = Router();
 
 router.post('/', userCtrl.createUser);
 
+router.post('/signin', userCtrl.signin);
+
 router.get('/', userCtrl.findAllUsers);
 
 router.get('/:id', userCtrl.findOneUser);

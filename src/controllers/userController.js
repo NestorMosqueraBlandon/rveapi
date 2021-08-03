@@ -1,6 +1,7 @@
 import User from "../models/User.js";
 import getPagination from '../libs/getPagination.js'
-
+import {generateToken} from '../libs/utils.js';
+import bcrypt from 'bcrypt';
 export const findAllUsers = async(req, res) => {
 
     try
@@ -39,4 +40,23 @@ export const deleteUser = async(req, res) =>{
     res.json({
         message: 'User were deleted successfully'
     });
+}
+
+export const signin = async (req, res) => {
+    const user = await User.findOne({username: req.body.username});
+    if(user)
+    {
+        if(bcrypt.compareSync(req.body.password, user.password))
+        {
+            res.send({
+                _id: user._id,
+                username: user.username,
+                name: user.name,
+                image: user.image,
+                isAdmin: user.isAdmin,
+                token: generateToken(user),
+            });
+            return;
+        }
+    }
 }
