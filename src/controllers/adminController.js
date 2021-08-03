@@ -26,7 +26,7 @@ export const findAllAdmins = async(req, res) => {
 }
 
 export const createAdmin = async(req, res) =>{
-    const newUser = new User({name: req.body.name, username: req.body.username, password: req.body.password})
+    const newUser = new Admin({name: req.body.name, username: req.body.username, password: req.body.password})
     const userCreated = await newUser.save();
     res.json(userCreated);
 }
