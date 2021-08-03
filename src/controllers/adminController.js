@@ -27,7 +27,7 @@ export const findAllAdmins = async(req, res) => {
 
 export const createAdmin = async(req, res) =>{
     const user = new Admin({name: req.body.name, username: req.body.username,
-    password: bcrypt.hashSync(req.body.password, 8)});
+    password: req.body.password });
     
     const createdUser = await user.save();
     res.send({
