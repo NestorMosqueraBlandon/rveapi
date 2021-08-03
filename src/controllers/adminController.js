@@ -53,7 +53,7 @@ export const signin = async (req, res) => {
     const admin = await Admin.findOne({username: req.body.username});
     if(admin)
     {
-        if(req.body.password == user.password)
+        if(req.body.password == admin.password)
         {
             res.send({
                 _id: admin._id,
