@@ -26,7 +26,7 @@ export const findAllAdmins = async(req, res) => {
 }
 
 export const createAdmin = async(req, res) =>{
-    const newUser = new User({name: req.body.name, username: req.body.email, password: req.body.password})
+    const newUser = new User({name: req.body.name, username: req.body.username, password: req.body.password})
     const userCreated = await newUser.save();
     res.json(userCreated);
 }
@@ -53,15 +53,17 @@ export const signin = async (req, res) => {
                 _id: admin._id,
                 username: admin.username,
                 name: admin.name,
-                image: admin.image,
-                isAdmin: admin.isAdmin,
                 token: generateToken(admin),
             });
             return;
         }else{
-            res.send({message: "Password incorrect"})
+            res.status(500).json({
+                message: 'Password incorrect'
+            })
         }
     }else{
-        res.send({message: "User dont exits"})
+        res.status(500).json({
+            message: 'User dont exits'
+        })
     }
 }
