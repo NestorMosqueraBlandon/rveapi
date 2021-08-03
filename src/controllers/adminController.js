@@ -1,7 +1,6 @@
 import Admin from "../models/Admin.js";
 import getPagination from '../libs/getPagination.js'
 import {generateToken} from '../libs/utils.js';
-import bcrypt from 'bcrypt';
 
 export const findAllAdmins = async(req, res) => {
 

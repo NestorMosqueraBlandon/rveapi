@@ -1,7 +1,6 @@
 import User from "../models/User.js";
 import getPagination from '../libs/getPagination.js'
 import {generateToken} from '../libs/utils.js';
-import bcrypt from 'bcrypt';
 export const findAllUsers = async(req, res) => {
 
     try
