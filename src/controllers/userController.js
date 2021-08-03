@@ -57,6 +57,10 @@ export const signin = async (req, res) => {
                 token: generateToken(user),
             });
             return;
+        }else{
+            res.send({message: "Password incorrect"})
         }
+    }else{
+        res.send({message: "User dont exits"})
     }
 }
