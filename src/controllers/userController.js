@@ -58,9 +58,13 @@ export const signin = async (req, res) => {
             });
             return;
         }else{
-            res.send({message: "Password incorrect"})
+            res.status(500).json({
+                message: error.meesage || 'Password incorrect'
+            })
         }
     }else{
-        res.send({message: "User dont exits"})
+        res.status(500).json({
+            message: error.meesage || 'User dont exits'
+        })
     }
 }
