@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import userRouter from '../routes/userRouter.js';
 import adminRouter from '../routes/adminRouter.js';
+import clientRouter from '../routes/clientRouter.js';
 import config from '../helpers/config.js';
 
 const app = express();
@@ -25,5 +26,7 @@ app.get('/', (req, res) => {
 app.use('/api/v1/users', userRouter);
 
 app.use('/api/v1/admins', adminRouter);
+
+app.use('/api/v1/clients', clientRouter);
 
 export default app;
