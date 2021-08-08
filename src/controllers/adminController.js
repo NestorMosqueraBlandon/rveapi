@@ -9,12 +9,12 @@ export const findAllAdmins = async(req, res) => {
         const {size, page} = req.query;
         const {limit, offset} = getPagination(page, size);
 
-        const users = await Admin.paginate({}, {offset, limit });
+        const users = await Admin.find({});
         res.json({
-            totalItems: users.totalDocs,
-            users: users.docs,
-            totalPages: users.totalPages,
-            currentPage: users.page - 1
+            // totalItems: users.totalDocs,
+            users: users
+            // totalPages: users.totalPages,
+            // currentPage: users.page - 1
         })
     }catch(error){
         res.status(500).json({
