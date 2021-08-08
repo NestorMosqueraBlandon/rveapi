@@ -24,7 +24,7 @@ export const findAllClients = async(req, res) => {
 }
 
 export const createClient = async(req, res) =>{
-    const newClient = new Client({name: req.body.name, source: req.body.source, email: req.body.email})
+    const newClient = new Client({name: req.body.name, identification: req.body.identification, phone:req.body.phone, address: req.body.address, city: req.body.city, source: req.body.source, email: req.body.email, icon: req.body.icon})
     const clientCreated = await newClient.save();
     res.json(clientCreated);
 }

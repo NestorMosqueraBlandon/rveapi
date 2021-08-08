@@ -5,6 +5,18 @@ const clientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    identification:{
+        type: Number,
+    },
+    phone:{
+        type: Number,
+    },
+    address:{
+        type: String,
+    },
+    city:{
+        type: String,
+    },
     source:{
         type: String,
         required: true,
@@ -15,6 +27,9 @@ const clientSchema = new mongoose.Schema({
         required: true,
         unique: true,
         trim: true
+    },
+    icon:{
+        type: String,
     },
 }, {
     versionKey: false,
