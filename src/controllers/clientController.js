@@ -8,12 +8,12 @@ export const findAllClients = async(req, res) => {
         const {size, page} = req.query;
         const {limit, offset} = getPagination(page, size);
 
-        const clients = await Client.paginate({}, {offset, limit });
+        const clients = await Client.find({});
         res.json({
-            totalItems: clients.totalDocs,
-            users: clients.docs,
-            totalPages: clients.totalPages,
-            currentPage: clients.page - 1
+            // totalItems: clients.totalDocs,
+            users: clients,
+            // totalPages: clients.totalPages,
+            // currentPage: clients.page - 1
         })
     }catch(error){
         res.status(500).json({
