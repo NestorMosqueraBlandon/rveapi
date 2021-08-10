@@ -15,6 +15,10 @@ const adminSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    image:{
+        type: String,
+        trim: true
+    },
 }, {
     versionKey: false,
     timestamps: true

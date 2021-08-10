@@ -1,6 +1,7 @@
 {
   "name": "rveapi",
   "type": "module",
+  "proxy": "http://127.0.0.1:3000",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -27,6 +28,7 @@
     "mongoose": "^5.13.4",
     "mongoose-paginate-v2": "^1.4.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "socket.io": "^4.1.3"
   }
 }
