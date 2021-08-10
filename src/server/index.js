@@ -1,7 +1,5 @@
-// import app from './app.js'
+import app from './app.js'
 import '../database/database.js'
-import server from './app.js';
 
-// server.listen(app.get('port'));
-server.listen('4000');
-// console.log(`Server on port ${app.get('port')}`)
+app.listen(app.get('port'));
+console.log(`Server on port ${app.get('port')}`)
