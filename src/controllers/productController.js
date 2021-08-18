@@ -11,7 +11,7 @@ export const findAllProducts = async(req, res) => {
         const products = await Product.find({});
         res.json({
             // totalItems: clients.totalDocs,
-            users: products,
+            products: products,
             // totalPages: clients.totalPages,
             // currentPage: clients.page - 1
         })
@@ -29,41 +29,41 @@ export const createProduct = async(req, res) =>{
     res.json(productCreated);
 }
 
-export const findOneUser = async(req, res) =>{
-    const user = await User.findById(req.params.id);
-    res.json(user);
-}
+// export const findOneUser = async(req, res) =>{
+//     const user = await User.findById(req.params.id);
+//     res.json(user);
+// }
 
-export const deleteUser = async(req, res) =>{
-    const user = await User.findByIdAndDelete(req.params.id);
-    res.json({
-        message: 'User were deleted successfully'
-    });
-}
+// export const deleteUser = async(req, res) =>{
+//     const user = await User.findByIdAndDelete(req.params.id);
+//     res.json({
+//         message: 'User were deleted successfully'
+//     });
+// }
 
-export const signin = async (req, res) => {
-    const user = await User.findOne({username: req.body.username});
-    if(user)
-    {
-        if(bcrypt.compareSync(req.body.password, user.password))
-        {
-            res.send({
-                _id: user._id,
-                username: user.username,
-                name: user.name,
-                image: user.image,
-                isAdmin: user.isAdmin,
-                token: generateToken(user),
-            });
-            return;
-        }else{
-            res.status(500).json({
-                message: 'Password incorrect'
-            })
-        }
-    }else{
-        res.status(500).json({
-            message: 'User dont exits'
-        })
-    }
-}
+// export const signin = async (req, res) => {
+//     const user = await User.findOne({username: req.body.username});
+//     if(user)
+//     {
+//         if(bcrypt.compareSync(req.body.password, user.password))
+//         {
+//             res.send({
+//                 _id: user._id,
+//                 username: user.username,
+//                 name: user.name,
+//                 image: user.image,
+//                 isAdmin: user.isAdmin,
+//                 token: generateToken(user),
+//             });
+//             return;
+//         }else{
+//             res.status(500).json({
+//                 message: 'Password incorrect'
+//             })
+//         }
+//     }else{
+//         res.status(500).json({
+//             message: 'User dont exits'
+//         })
+//     }
+// }

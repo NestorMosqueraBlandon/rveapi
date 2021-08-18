@@ -4,6 +4,7 @@ import cors from 'cors';
 import userRouter from '../routes/userRouter.js';
 import adminRouter from '../routes/adminRouter.js';
 import clientRouter from '../routes/clientRouter.js';
+import productRouter from '../routes/productRouter.js';
 import config from '../helpers/config.js';
 
 const app = express();
@@ -28,5 +29,7 @@ app.use('/api/v1/users', userRouter);
 app.use('/api/v1/admins', adminRouter);
 
 app.use('/api/v1/clients', clientRouter);
+
+app.use('/api/v1/products', productRouter);
 
 export default app;
