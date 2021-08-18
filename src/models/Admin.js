@@ -17,7 +17,8 @@ const adminSchema = new mongoose.Schema({
     },
     image:{
         type: String,
-        trim: true
+        trim: true,
+        default: "./img/ceo.png"
     },
 }, {
     versionKey: false,
