@@ -24,7 +24,7 @@ export const findAllProducts = async(req, res) => {
 }
 
 export const createProduct = async(req, res) =>{
-    const newProduct = new Product({name: req.body.name, brand: req.body.brand, category:req.body.category, image: req.body.image, price: req.body.price})
+    const newProduct = new Product({name: req.body.name, brand: req.body.brand, image: req.body.image, price: req.body.price})
     const productCreated = await newProduct.save();
     res.json(productCreated);
 }
