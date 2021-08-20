@@ -34,36 +34,9 @@ export const createProduct = async(req, res) =>{
 //     res.json(user);
 // }
 
-// export const deleteUser = async(req, res) =>{
-//     const user = await User.findByIdAndDelete(req.params.id);
-//     res.json({
-//         message: 'User were deleted successfully'
-//     });
-// }
-
-// export const signin = async (req, res) => {
-//     const user = await User.findOne({username: req.body.username});
-//     if(user)
-//     {
-//         if(bcrypt.compareSync(req.body.password, user.password))
-//         {
-//             res.send({
-//                 _id: user._id,
-//                 username: user.username,
-//                 name: user.name,
-//                 image: user.image,
-//                 isAdmin: user.isAdmin,
-//                 token: generateToken(user),
-//             });
-//             return;
-//         }else{
-//             res.status(500).json({
-//                 message: 'Password incorrect'
-//             })
-//         }
-//     }else{
-//         res.status(500).json({
-//             message: 'User dont exits'
-//         })
-//     }
-// }
+export const deleteProduct = async(req, res) =>{
+    const product = await Product.findByIdAndDelete(req.params.id);
+    res.json({
+        message: 'Product were deleted successfully'
+    });
+}
