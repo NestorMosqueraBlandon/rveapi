@@ -30,12 +30,12 @@ export const createClient = async(req, res) =>{
 }
 
 export const findOneClient = async(req, res) =>{
-    const user = await User.findById(req.params.id);
+    const user = await Client.findById(req.params.id);
     res.json(user);
 }
 
 export const deleteClient = async(req, res) =>{
-    const user = await User.findByIdAndDelete(req.params.id);
+    const user = await Client.findByIdAndDelete(req.params.id);
     res.json({
         message: 'User were deleted successfully'
     });
