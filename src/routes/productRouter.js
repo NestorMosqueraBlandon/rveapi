@@ -8,6 +8,6 @@ router.get('/', productCtrl.findAllProducts);
 
 // router.get('/:id', userCtrl.findOneUser);
 
-router.delete('/:id', productCtrl.deleteUser);
+router.delete('/:id', productCtrl.deleteProduct);
 
 export default router;
