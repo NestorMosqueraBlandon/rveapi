@@ -6,7 +6,7 @@ router.post('/', clientCtrl.createClient);
 
 router.get('/', clientCtrl.findAllClients);
 
-router.post('/:id', clientCtrl.findOneClient);
+router.get('/:id', clientCtrl.findOneClient);
 
 router.delete('/:id', clientCtrl.deleteClient);
 
