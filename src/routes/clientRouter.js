@@ -1,13 +1,13 @@
 import {Router} from 'express';
-import * as userCtrl from '../controllers/clientController.js'
+import * as clientCtrl from '../controllers/clientController.js'
 const router = Router();
 
-router.post('/', userCtrl.createClient);
+router.post('/', clientCtrl.createClient);
 
-router.get('/', userCtrl.findAllClients);
+router.get('/', clientCtrl.findAllClients);
 
-// router.get('/:id', userCtrl.findOneUser);
+router.get('/:id', clientCtrl.findOneClient);
 
-// router.delete('/:id', userCtrl.deleteUser);
+router.delete('/:id', clientCtrl.deleteClient);
 
 export default router;

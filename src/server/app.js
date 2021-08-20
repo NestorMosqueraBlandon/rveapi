@@ -6,6 +6,7 @@ import adminRouter from '../routes/adminRouter.js';
 import clientRouter from '../routes/clientRouter.js';
 import productRouter from '../routes/productRouter.js';
 import config from '../helpers/config.js';
+import fileUpload from 'express-fileupload';
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-
+app.use(fileUpload())
 // Routes
 
 app.get('/', (req, res) => {
