@@ -40,3 +40,5 @@ export const deleteProduct = async(req, res) =>{
         message: 'Product were deleted successfully'
     });
 }
+
+// AKIAVHJK4GQ6BBLS6M62

@@ -6,6 +6,7 @@ import adminRouter from '../routes/adminRouter.js';
 import clientRouter from '../routes/clientRouter.js';
 import productRouter from '../routes/productRouter.js';
 import categoryRouter from '../routes/categoryRouter.js';
+import uploadRouter from '../routes/uploadRouter.js';
 import config from '../helpers/config.js';
 import fileUpload from 'express-fileupload';
 
@@ -35,5 +36,7 @@ app.use('/api/v1/clients', clientRouter);
 app.use('/api/v1/products', productRouter);
 
 app.use('/api/v1/categories', categoryRouter);
+
+app.use('/api/v1/uploads', uploadRouter);
 
 export default app;

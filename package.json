@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/NestorMosqueraBlandon/rveapi#readme",
   "dependencies": {
+    "aws-sdk": "^2.973.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -29,6 +30,8 @@
     "mongoose": "^5.13.4",
     "mongoose-paginate-v2": "^1.4.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "multer-s3": "^2.9.0",
     "nodemon": "^2.0.12",
     "socket.io": "^4.1.3"
   }
