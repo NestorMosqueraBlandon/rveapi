@@ -24,10 +24,11 @@ export const findAllComputers = async (req, res) => {
 export const createComputer = async (req, res) => {
   const newComputer = new Computer({
     name: req.body.name,
-    brand: req.body.brand,
-    category: req.body.category,
-    image: req.body.image,
+    specs: req.body.specs,
     price: req.body.price,
+    brand: req.body.brand,
+    image: req.body.image,
+    description: req.body.description,
   });
   const computerCreated = await newComputer.save();
   res.json(computerCreated);
