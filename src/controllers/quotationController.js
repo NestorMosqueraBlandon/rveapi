@@ -28,6 +28,8 @@ export const createQuotation = async (req, res) => {
     note: req.body.note,
     items: req.body.items,
   });
+  console.log(newQuotation);
+
   const quotationCreated = await newQuotation.save();
   res.json(quotationCreated);
 };

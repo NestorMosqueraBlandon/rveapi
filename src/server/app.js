@@ -6,6 +6,7 @@ import adminRouter from '../routes/adminRouter.js';
 import clientRouter from '../routes/clientRouter.js';
 import productRouter from '../routes/productRouter.js';
 import computerRouter from '../routes/computerRouter.js';
+import quotationRouter from '../routes/quotationRouter.js';
 import categoryRouter from '../routes/categoryRouter.js';
 import uploadRouter from '../routes/uploadRouter.js';
 import config from '../helpers/config.js';
@@ -37,6 +38,8 @@ app.use('/api/v1/clients', clientRouter);
 app.use('/api/v1/products', productRouter);
 
 app.use('/api/v1/computers', computerRouter);
+
+app.use('/api/v1/quotations', quotationRouter);
 
 app.use('/api/v1/categories', categoryRouter);
 
