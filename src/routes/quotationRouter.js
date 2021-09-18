@@ -6,7 +6,7 @@ router.post('/', quotationCtrl.createQuotation);
 
 router.get('/', quotationCtrl.findAllQuotations);
 
-// router.get('/:id', productCtrl.findOneProduct);
+router.get('/:id', productCtrl.findOneQuotation);
 
 router.delete('/:id', quotationCtrl.deleteQuotation);
 

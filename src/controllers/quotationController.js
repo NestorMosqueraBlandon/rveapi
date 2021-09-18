@@ -34,10 +34,10 @@ export const createQuotation = async (req, res) => {
   res.json(quotationCreated);
 };
 
-// export const findOneUser = async(req, res) =>{
-//     const user = await User.findById(req.params.id);
-//     res.json(user);
-// }
+export const findOneQuotation = async (req, res) => {
+  const quotation = await Quotation.findById(req.params.id);
+  res.json(quotation);
+};
 
 export const deleteQuotation = async (req, res) => {
   const quotation = await Quotation.findByIdAndDelete(req.params.id);
