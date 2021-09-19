@@ -1,5 +1,6 @@
 import Quotation from '../models/Quotation.js';
 import getPagination from '../libs/getPagination.js';
+import { sendQuotationEmail } from '../services/emailService.js';
 
 export const findAllQuotations = async (req, res) => {
   try {
@@ -44,6 +45,11 @@ export const deleteQuotation = async (req, res) => {
   res.json({
     message: 'Quotation were deleted successfully',
   });
+};
+
+export const sendEmailQuotation = async (req, res) => {
+  sendQuotationEmail(req.body.email);
+  res.json('Hola');
 };
 
 // AKIAVHJK4GQ6BBLS6M62

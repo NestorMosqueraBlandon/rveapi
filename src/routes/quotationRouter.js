@@ -10,4 +10,6 @@ router.get('/:id', quotationCtrl.findOneQuotation);
 
 router.delete('/:id', quotationCtrl.deleteQuotation);
 
+router.post('/email', quotationCtrl.sendEmailQuotation);
+
 export default router;
