@@ -4,8 +4,10 @@ import { generateToken } from '../libs/utils.js';
 
 export const findAllProducts = async (req, res) => {
   try {
+    const allProducts = await Product.find({});
+    console.log(allProducts.length);
     const { size, page } = req.query;
-    const { limit, offset } = getPagination(page, size);
+    const { limit, offset } = getPagination(page, size, allProducts.length);
 
     const products = await Product.paginate({}, { offset, limit });
     res.json({
