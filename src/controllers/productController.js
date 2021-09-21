@@ -9,10 +9,10 @@ export const findAllProducts = async (req, res) => {
 
     const products = await Product.find({});
     res.json({
-      // totalItems: clients.totalDocs,
+      totalItems: products.totalDocs,
       products: products,
-      // totalPages: clients.totalPages,
-      // currentPage: clients.page - 1
+      totalPages: products.totalPages,
+      currentPage: products.page - 1,
     });
   } catch (error) {
     res.status(500).json({

@@ -9,10 +9,10 @@ export const findAllQuotations = async (req, res) => {
 
     const quotations = await Quotation.find({});
     res.json({
-      // totalItems: clients.totalDocs,
+      totalItems: quotations.totalDocs,
       quotations: quotations,
-      // totalPages: clients.totalPages,
-      // currentPage: clients.page - 1
+      totalPages: quotations.totalPages,
+      currentPage: quotations.page - 1,
     });
   } catch (error) {
     res.status(500).json({
