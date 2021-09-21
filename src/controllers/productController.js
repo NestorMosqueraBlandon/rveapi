@@ -7,7 +7,7 @@ export const findAllProducts = async (req, res) => {
     const { size, page } = req.query;
     const { limit, offset } = getPagination(page, size);
 
-    const products = await Product.find({});
+    const products = await Product.paginate({}, offset, limit);
     res.json({
       totalItems: products.totalDocs,
       products: products,
