@@ -10,7 +10,7 @@ export const findAllProducts = async (req, res) => {
     const products = await Product.paginate({}, offset, limit);
     res.json({
       totalItems: products.totalDocs,
-      products: products,
+      products: products.docs,
       totalPages: products.totalPages,
       currentPage: products.page - 1,
     });
