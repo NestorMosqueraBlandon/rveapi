@@ -9,31 +9,17 @@ const computerSchema = new mongoose.Schema(
     },
     specs: [
       {
-        cpu: {
+        name: {
           type: mongoose.Schema.Types.ObjectId,
           ref: 'Product',
         },
-        motherboard: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
+        name: {
+          type: String,
         },
-        ram: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
+        price: {
+          type: String,
         },
-        ssd: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
-        },
-        hdd: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
-        },
-        powersupply: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
-        },
-        case: {
+        prodcut: {
           type: mongoose.Schema.Types.ObjectId,
           ref: 'Product',
         },
