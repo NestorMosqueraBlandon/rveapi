@@ -4,12 +4,15 @@ import { generateToken } from '../libs/utils.js';
 
 export const findAllProducts = async (req, res) => {
   try {
-    const allProducts = await Product.find({});
+    const allProducts = await Product.find({}).sort({ price: -1 });
     console.log(allProducts.length);
+
+    const sort = { price: 1 };
+
     const { size, page } = req.query;
     const { limit, offset } = getPagination(page, size, allProducts.length);
 
-    const products = await Product.paginate({}, { offset, limit });
+    const products = await Product.paginate({}, { offset, limit, sort });
     res.json({
       totalItems: products.totalDocs,
       products: products.docs,
