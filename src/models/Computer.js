@@ -10,16 +10,12 @@ const computerSchema = new mongoose.Schema(
     specs: [
       {
         name: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
-        },
-        name: {
           type: String,
         },
         price: {
           type: String,
         },
-        prodcut: {
+        product: {
           type: mongoose.Schema.Types.ObjectId,
           ref: 'Product',
         },
