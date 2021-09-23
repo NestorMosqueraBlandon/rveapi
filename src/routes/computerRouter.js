@@ -6,7 +6,7 @@ router.post('/', computerCtrl.createComputer);
 
 router.get('/', computerCtrl.findAllComputers);
 
-// router.get('/:id', userCtrl.findOneUser);
+router.get('/:id', computerCtrl.findOneComputer);
 
 router.delete('/:id', computerCtrl.deleteComputer);
 

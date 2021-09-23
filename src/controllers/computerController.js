@@ -39,10 +39,10 @@ export const createComputer = async (req, res) => {
   res.json(computerCreated);
 };
 
-// export const findOneUser = async(req, res) =>{
-//     const user = await User.findById(req.params.id);
-//     res.json(user);
-// }
+export const findOneComputer = async (req, res) => {
+  const computer = await Computer.findById(req.params.id);
+  res.json(computer);
+};
 
 export const deleteComputer = async (req, res) => {
   const computer = await Computer.findByIdAndDelete(req.params.id);
