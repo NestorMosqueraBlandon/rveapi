@@ -24,7 +24,7 @@ export const findAllComputers = async (req, res) => {
 export const createComputer = async (req, res) => {
   let slug = req.body.name;
   slug = slug.toLowerCase();
-  slug.replace(/\s+/g, '-');
+  slug = slug.replace(/\s+/g, '-');
 
   const newComputer = new Computer({
     name: req.body.name,
