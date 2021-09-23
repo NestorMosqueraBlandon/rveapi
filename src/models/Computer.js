@@ -7,6 +7,9 @@ const computerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    slug: {
+      type: String,
+    },
     specs: [
       {
         name: {

@@ -22,8 +22,12 @@ export const findAllComputers = async (req, res) => {
 };
 
 export const createComputer = async (req, res) => {
+  let slug = req.body.name;
+  slug.replace(/ /g, '-');
+
   const newComputer = new Computer({
     name: req.body.name,
+    slug,
     specs: req.body.specs,
     price: req.body.price,
     brand: req.body.brand,
