@@ -12,6 +12,7 @@ import orderRouter from '../routes/orderRouter.js';
 import uploadRouter from '../routes/uploadRouter.js';
 import config from '../helpers/config.js';
 import fileUpload from 'express-fileupload';
+import mercadopago from 'mercadopago';
 
 const app = express();
 
@@ -47,5 +48,28 @@ app.use('/api/v1/categories', categoryRouter);
 app.use('/api/v1/orders', orderRouter);
 
 app.use('/api/v1/uploads', uploadRouter);
+
+app.post('api/v1/config/mercadopago', (req, res) => {
+  let preference = {
+    items: [
+      {
+        title: req.body.title,
+        unit_price: parseInt(req.body.price),
+        quantity: 1,
+      },
+    ],
+  };
+  mercadopago.preferences
+    .create(preference)
+    .then(function (response) {
+      console.log(response.body);
+
+      res.redirect(response.body.init_point);
+      // res.send('a pagar');
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+});
 
 export default app;
