@@ -1,6 +1,7 @@
 import User from '../models/User.js';
 import getPagination from '../libs/getPagination.js';
 import { generateToken } from '../libs/utils.js';
+import bcrypt from 'bcrypt';
 
 export const findAllUsers = async (req, res) => {
   try {
@@ -23,10 +24,12 @@ export const findAllUsers = async (req, res) => {
 };
 
 export const createUser = async (req, res) => {
+  const newPassword = bcrypt.hashSync(req.body.password, 8);
+
   const newUser = new User({
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password,
+    password: newPassword,
   });
   const userCreated = await newUser.save();
   res.json(userCreated);
@@ -45,13 +48,16 @@ export const deleteUser = async (req, res) => {
 };
 
 export const signin = async (req, res) => {
+  console.log(req.body);
   const user = await User.findOne({ email: req.body.email });
+
+  console.log(user);
   if (user) {
     if (bcrypt.compareSync(req.body.password, user.password)) {
+      console.log('entro21');
       res.send({
         _id: user._id,
         name: user.name,
-        image: user.image,
         isAdmin: user.isAdmin,
         token: generateToken(user),
       });
