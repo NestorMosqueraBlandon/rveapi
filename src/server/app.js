@@ -63,6 +63,8 @@ app.post('/api/v1/config/mercadopago', (req, res) => {
         quantity: 1,
       },
     ],
+
+    auto_return: 'approved',
   };
   mercadopago.preferences
     .create(preference)
