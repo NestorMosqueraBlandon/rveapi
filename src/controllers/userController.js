@@ -45,12 +45,11 @@ export const deleteUser = async (req, res) => {
 };
 
 export const signin = async (req, res) => {
-  const user = await User.findOne({ username: req.body.username });
+  const user = await User.findOne({ email: req.body.email });
   if (user) {
     if (bcrypt.compareSync(req.body.password, user.password)) {
       res.send({
         _id: user._id,
-        username: user.username,
         name: user.name,
         image: user.image,
         isAdmin: user.isAdmin,
