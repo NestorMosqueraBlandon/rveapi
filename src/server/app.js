@@ -15,6 +15,10 @@ import fileUpload from 'express-fileupload';
 import mercadopago from 'mercadopago';
 
 const app = express();
+mercadopago.configure({
+  access_token:
+    'APP_USR-4427138981263654-103114-09b1954c80295c39f47255f73b5060f2-319397311',
+});
 
 // settings
 app.set('port', config.PORT);
@@ -25,6 +29,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(fileUpload());
+
 // Routes
 
 app.get('/', (req, res) => {
@@ -49,7 +54,7 @@ app.use('/api/v1/orders', orderRouter);
 
 app.use('/api/v1/uploads', uploadRouter);
 
-app.post('api/v1/config/mercadopago', (req, res) => {
+app.post('/api/v1/config/mercadopago', (req, res) => {
   let preference = {
     items: [
       {
