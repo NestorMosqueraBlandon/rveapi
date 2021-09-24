@@ -16,8 +16,10 @@ export const findAllOrders = async (req, res) => {
 };
 
 export const createOrder = async (req, res) => {
+  const newUser = req.body.user;
+
   const newOrder = new Order({
-    user: req.body.user,
+    user: newUser._id,
     orderItems: req.body.orderItems,
     shippingAddress: req.body.shippingAddress,
     paymentMethod: req.body.paymentMethod,
