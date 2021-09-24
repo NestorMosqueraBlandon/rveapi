@@ -1,0 +1,48 @@
+import Order from '../models/Order.js';
+import getPagination from '../libs/getPagination.js';
+
+export const findAllOrders = async (req, res) => {
+  try {
+    const orders = await Order.find({});
+
+    res.json({
+      orders: orders,
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: error.meesage || 'Something goes wrong retrieving the users',
+    });
+  }
+};
+
+export const createOrder = async (req, res) => {
+  const newOrder = new Order({
+    user,
+    orderItems,
+    shippingAddress,
+    paymentMethod,
+    paymentResult,
+    itemsPrice,
+    shippingPrice,
+    taxPrice,
+    totalPrice,
+    isPaid,
+    isDelivered,
+    paidAt,
+    deleveredAt,
+  });
+  const createdOrder = await newOrder.save();
+  res.json(createdOrder);
+};
+
+export const findOneOrder = async (req, res) => {
+  const order = await Order.findById(req.params.id);
+  res.json(order);
+};
+
+export const deleteOrder = async (req, res) => {
+  const order = await Order.findByIdAndDelete(req.params.id);
+  res.json({
+    message: 'Order were deleted successfully',
+  });
+};

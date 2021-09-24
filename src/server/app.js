@@ -8,6 +8,7 @@ import productRouter from '../routes/productRouter.js';
 import computerRouter from '../routes/computerRouter.js';
 import quotationRouter from '../routes/quotationRouter.js';
 import categoryRouter from '../routes/categoryRouter.js';
+import orderRouter from '../routes/orderRouter.js';
 import uploadRouter from '../routes/uploadRouter.js';
 import config from '../helpers/config.js';
 import fileUpload from 'express-fileupload';
@@ -42,6 +43,8 @@ app.use('/api/v1/computers', computerRouter);
 app.use('/api/v1/quotations', quotationRouter);
 
 app.use('/api/v1/categories', categoryRouter);
+
+app.use('/api/v1/orders', orderRouter);
 
 app.use('/api/v1/uploads', uploadRouter);
 
