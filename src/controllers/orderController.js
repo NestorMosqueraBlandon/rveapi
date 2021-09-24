@@ -17,19 +17,19 @@ export const findAllOrders = async (req, res) => {
 
 export const createOrder = async (req, res) => {
   const newOrder = new Order({
-    user,
-    orderItems,
-    shippingAddress,
-    paymentMethod,
-    paymentResult,
-    itemsPrice,
-    shippingPrice,
-    taxPrice,
-    totalPrice,
-    isPaid,
-    isDelivered,
-    paidAt,
-    deleveredAt,
+    user: req.body.user,
+    orderItems: req.body.orderItems,
+    shippingAddress: req.body.shippingAddress,
+    paymentMethod: req.body.paymentMethod,
+    paymentResult: req.body.paymentResult,
+    itemsPrice: req.body.itemsPrice,
+    shippingPrice: req.body.shippingPrice,
+    taxPrice: req.body.taxPrice,
+    totalPrice: req.body.totalPrice,
+    isPaid: req.body.isPaid,
+    isDelivered: req.body.isDelivered,
+    paidAt: req.body.paidAt,
+    deliveredAt: req.body.deliveredAt,
   });
   const createdOrder = await newOrder.save();
   res.json(createdOrder);
