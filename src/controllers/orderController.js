@@ -16,7 +16,8 @@ export const findAllOrders = async (req, res) => {
 };
 
 export const createOrder = async (req, res) => {
-  const newUser = JSON.parse(req.body.user);
+  console.log(req.body.user);
+  const newUser = req.body.user;
   const newOrder = new Order({
     user: newUser._id,
     orderItems: req.body.orderItems,
