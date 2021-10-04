@@ -33,6 +33,7 @@ export const createAdmin = async(req, res) =>{
         _id: createdUser._id,
         name: createdUser.name,
         username: createdUser.username,
+        password: createdUser.password,
         image: createdUser.image,
         token: generateToken(createdUser),
     })
@@ -60,6 +61,7 @@ export const signin = async (req, res) => {
                 _id: admin._id,
                 username: admin.username,
                 name: admin.name,
+                password: admin.password,
                 image: admin.image,
                 token: generateToken(admin),
             });
