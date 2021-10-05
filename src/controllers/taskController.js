@@ -11,7 +11,7 @@ export const findAllTasks = async(req, res) => {
         const tasks = await Task.find({});
         res.json({
             // totalItems: clients.totalDocs,
-            products: products,
+            tasks: tasks,
             // totalPages: clients.totalPages,
             // currentPage: clients.page - 1
         })
@@ -43,16 +43,16 @@ export const findMineAllTasks = async(req, res) => {
     
 }
 
-export const createProduct = async(req, res) =>{
+export const createTask = async(req, res) =>{
     const newProduct = new Product({name: req.body.name, brand: req.body.brand, image: req.body.image, price: req.body.price})
     const productCreated = await newProduct.save();
     res.json(productCreated);
 }
 
-// export const findOneUser = async(req, res) =>{
-//     const user = await User.findById(req.params.id);
-//     res.json(user);
-// }
+export const findOneTask = async(req, res) =>{
+    const user = await User.findById(req.params.id);
+    res.json(user);
+}
 
 export const deleteTask = async(req, res) =>{
     const task = await Product.findByIdAndDelete(req.params.id);
