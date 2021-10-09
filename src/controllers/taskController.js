@@ -31,7 +31,7 @@ export const findMineAllTasks = async(req, res) => {
         const tasks = await Task.find({});
         res.json({
             // totalItems: clients.totalDocs,
-            products: products,
+            tasks: tasks,
             // totalPages: clients.totalPages,
             // currentPage: clients.page - 1
         })
@@ -44,7 +44,7 @@ export const findMineAllTasks = async(req, res) => {
 }
 
 export const createTask = async(req, res) =>{
-    const newTask = new Task({title: req.body.title, description: req.body.description, priority: req.body.priority,})
+    const newTask = new Task({title: req.body.title, description: req.body.description, priority: req.body.priority, users: req.body.users})
     const taskCreated = await newTask.save();
     res.json(taskCreated);
 }

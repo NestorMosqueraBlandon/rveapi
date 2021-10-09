@@ -13,12 +13,14 @@ const taskSchema = new mongoose.Schema({
     description:{
         type: String,
     },
-    peoples:[
+    users:[
         {
-            people:{
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Admin'
+            name:{
+                type: String,
             },
+            img:{
+                type: String
+            }
         }
     ],
     files:[
