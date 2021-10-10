@@ -11,7 +11,7 @@ dotenv.config({
 
 export default {
   NODE_ENV: process.env.NODE_ENV || 'development',
-  PORT: process.env.PORT || 6001,
+  PORT: process.env.PORT || 6002,
   mongodbURL:
     process.env.MONGODB_URI ||
     'mongodb+srv://user:api12345@cluster0.2tqpl.mongodb.net/apirest?retryWrites=true&w=majority',

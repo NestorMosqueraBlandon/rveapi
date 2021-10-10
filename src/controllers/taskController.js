@@ -62,7 +62,7 @@ export const deleteTask = async(req, res) =>{
 }
 
 export const updateTask = async(req, res) => {
-    const taskId = req.parems.id;
+    const taskId = req.params.id;
 
     const task = await Task.findById(taskId);
 
