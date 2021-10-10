@@ -60,3 +60,17 @@ export const deleteTask = async(req, res) =>{
         message: 'Product were deleted successfully'
     });
 }
+
+export const updateTask = async(req, res) => {
+    const taskId = req.parems.id;
+
+    const task = await Task.findById(taskId);
+
+    if(task){
+        task.state = task.state + 1;
+        const updatedTask = await task.save();
+        res.send({ message: 'Task Updated', task: updatedTask });
+    }else {
+        res.status(404).send({ message: 'Task Not Found' });
+      }
+}

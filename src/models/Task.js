@@ -23,6 +23,7 @@ const taskSchema = new mongoose.Schema({
             }
         }
     ],
+    state: {type: Number, default: 0},
     files:[
         {
             file:{

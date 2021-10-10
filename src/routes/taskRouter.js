@@ -8,6 +8,8 @@ router.get('/', taskCtrl.findAllTasks);
 
 router.get('/:id', taskCtrl.findOneTask);
 
+router.put('/:id', taskCtrl.updateTask);
+
 router.delete('/:id', taskCtrl.deleteTask);
 
 export default router;
