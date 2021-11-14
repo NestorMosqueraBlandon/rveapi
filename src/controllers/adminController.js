@@ -51,6 +51,8 @@ export const deleteAdmin = async(req, res) =>{
     });
 }
 
+
+
 export const signin = async (req, res) => {
     const admin = await Admin.findOne({username: req.body.username});
     if(admin)

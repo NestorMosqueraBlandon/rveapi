@@ -40,6 +40,9 @@ const computerSchema = new mongoose.Schema(
     description: {
       type: String,
     },
+    type:{
+      type: String,
+    }
   },
   {
     versionKey: false,

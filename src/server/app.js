@@ -14,12 +14,23 @@ import uploadRouter from '../routes/uploadRouter.js';
 import config from '../helpers/config.js';
 import fileUpload from 'express-fileupload';
 import mercadopago from 'mercadopago';
+import multer from 'multer';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import cloudinary from "cloudinary"
+
 
 const app = express();
 mercadopago.configure({
   access_token:
     'APP_USR-4427138981263654-103114-09b1954c80295c39f47255f73b5060f2-319397311',
 });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
 
 // settings
 app.set('port', config.PORT);
@@ -30,7 +41,20 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(fileUpload());
+const storage = multer.diskStorage({
+  destination:  path.join(__dirname, "public/img/uploads"),
+  filename: (req, file, cb) => {
+    console.log("this si the archive", file);
+    cb(null, new Date().getTime() + path.extname(file.originalname))
+  }
+});
+app.use(multer({storage}).single("file"));
 
+cloudinary.config({
+  cloud_name: "real-vision-enterprise",
+  api_key: "462945265296275",
+  api_secret: "VgRqwSXmGstaUO6eSSmVoi2y37o"
+})
 // Routes
 
 app.get('/', (req, res) => {
