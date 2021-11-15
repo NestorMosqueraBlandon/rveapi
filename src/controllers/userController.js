@@ -124,7 +124,7 @@ export const updateUser = async (req, res) => {
 
   await user.save();
 
-  res.json(200);
+  res.json({user});
 }
 
 export const uploadImage = async (req, res) => {
