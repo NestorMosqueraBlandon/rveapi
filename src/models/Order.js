@@ -3,7 +3,7 @@ import mongoosePaginate from 'mongoose-paginate-v2';
 
 const orderSchema = new mongoose.Schema(
   {
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', },
     orderItems: [
       {
         name: { type: String, required: true },
@@ -14,10 +14,10 @@ const orderSchema = new mongoose.Schema(
     ],
     shippingAddress: {
       name: { type: String, required: true },
-      identification: { type: String, required: true },
-      phone: { type: String, required: true },
-      address: { type: String, required: true },
-      city: { type: String, required: true },
+      identification: { type: String },
+      phone: { type: String, },
+      address: { type: String, },
+      city: { type: String,  },
     },
     paymentMethod: { type: String, required: true },
     paymentResult: { id: String, status: String, email_address: String },
