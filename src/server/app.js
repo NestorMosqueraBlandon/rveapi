@@ -7,6 +7,7 @@ import clientRouter from '../routes/clientRouter.js';
 import productRouter from '../routes/productRouter.js';
 import computerRouter from '../routes/computerRouter.js';
 import quotationRouter from '../routes/quotationRouter.js';
+import sellsRouter from '../routes/sellsRouter.js';
 import categoryRouter from '../routes/categoryRouter.js';
 import orderRouter from '../routes/orderRouter.js';
 import taskRouter from '../routes/taskRouter.js';
@@ -72,6 +73,8 @@ app.use('/api/v1/products', productRouter);
 app.use('/api/v1/computers', computerRouter);
 
 app.use('/api/v1/quotations', quotationRouter);
+
+app.use('/api/v1/sells', sellsRouter);
 
 app.use('/api/v1/categories', categoryRouter);
 
