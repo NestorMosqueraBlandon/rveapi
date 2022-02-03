@@ -95,9 +95,9 @@ app.post('/api/v1/config/mercadopago', (req, res) => {
     ],
 
     back_urls: {
-      success: 'https://rvehardware.com/',
-      failure: 'https://rvehardware.com/',
-      pending: 'https://rvehardware.com/',
+      success: req.body.url,
+      failure: req.body.url,
+      pending: req.body.url,
     },
 
     auto_return: 'approved',
